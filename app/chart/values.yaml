@@ -1,0 +1,5 @@
+namespace: default
+image:
+  repo: docker.appdirect.tools
+  name: klm/klm
+  tag: 1.0.0
