@@ -8,15 +8,12 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: default
-    server: https://kubernetes.default.svc
+    namespace: {{ .Values.spec.destination.namespace }}
+    server: {{ .Values.spec.destination.server }}
   source:
     path: apps/cddemo
-    helm:
-      valueFiles:
-      - values.yaml
     repoURL: https://github.com/leoluz/argocd
-    targetRevision: HEAD
+    targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
     automated:
       prune: true
