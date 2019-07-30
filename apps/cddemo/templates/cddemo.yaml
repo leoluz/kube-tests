@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cddemo
+  namespace: {{ .Values.namespace }}
+  labels:
+    ad-app: cddemo
+    ingress: "true"
+  annotations:
+    appdirect.com/ingress.mgmt: "true"
+    appdirect.com/ingress.name: cddemo
+    appdirect.com/metadata.owner: platformdev@appdirect.com
+spec:
+  selector:
+    ad-app: cddemo
+  ports:
+    - name: http-port
+      port: 80
+      targetPort: http
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cddemo 
+  namespace: {{ .Values.namespace }}
+  labels:
+    ad-app: cddemo
+  annotations:
+    appdirect.com/metadata.owner: platformdev@appdirect.com
+    appdirect.com/metadata.github: https://github.com/AppDirect/cd-demo
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      ad-app: cddemo
+  progressDeadlineSeconds: 100
+  template:
+    metadata:
+      labels:
+        ad-app: cddemo
+    spec:
+      containers:
+      - name: cddemo
+        image: {{ .Values.image.repo }}/{{ .Values.image.name }}:{{ .Values.image.tag }}
+        env:
+          - name: SERVER_PORT
+            value: "8080"
+        command: ["cddemo"]
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+          name: http
+        livenessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 5
+        readinessProbe:
+          tcpSocket:
+            port: http
+          initialDelaySeconds: 2
+        resources:
+          requests:
+            cpu: 100m
+            memory: 10Mi
+          limits:
+            cpu: 200m
+            memory: 100Mi
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
+          runAsUser: 1000
+      restartPolicy: Always
