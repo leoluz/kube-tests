@@ -11,9 +11,9 @@ spec:
     namespace: argocd
     server: https://kubernetes.default.svc
   source:
-    path: argocd
+    path: argocd/apps
     repoURL: https://github.com/leoluz/argocd
     targetRevision: master
   syncPolicy:
     automated:
-      prune: false
+      prune: true
