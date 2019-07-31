@@ -14,8 +14,8 @@ spec:
     path: apps/cddemo
     repoURL: https://github.com/leoluz/argocd
     targetRevision: {{ .Values.spec.source.targetRevision }}
-{{ if .Values.autoSync }}
+{{- if .Values.autoSync }}
   syncPolicy:
     automated:
       prune: true
-{{ end }}
+{{- end }}
