@@ -5,4 +5,4 @@ spec:
   source:
     targetRevision: master
 
-autoSync: true
+autoSync: false
