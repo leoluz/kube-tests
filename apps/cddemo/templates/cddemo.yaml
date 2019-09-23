@@ -31,7 +31,7 @@ metadata:
     appdirect.com/metadata.owner: platformdev@appdirect.com
     appdirect.com/metadata.github: https://github.com/AppDirect/cd-demo
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: Recreate
   selector:
