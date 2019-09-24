@@ -2,4 +2,5 @@ namespace: default
 image:
   repo: docker.appdirect.tools
   name: cddemo/cddemo
-  tag: latest
+  tag: local
+jobNumber: 2

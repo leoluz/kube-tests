@@ -95,7 +95,7 @@ spec:
         image: alpine
         imagePullPolicy: Always
         command: ["sh", "-c"]
-        args: ["echo hi from postsync-job 1"]
+        args: ["echo hi from postsync-job {{ .Values.jobNumber }}"]
         resources:
           limits:
             cpu: 100m
@@ -125,7 +125,7 @@ spec:
         image: alpine
         imagePullPolicy: Always
         command: ["sh", "-c"]
-        args: ["echo hi from syncfail-job 1"]
+        args: ["echo hi from syncfail-job {{ .Values.jobNumber }}"]
         resources:
           limits:
             cpu: 100m
