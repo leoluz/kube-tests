@@ -32,8 +32,6 @@ metadata:
     appdirect.com/metadata.github: https://github.com/AppDirect/cd-demo
 spec:
   replicas: 2
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       ad-app: cddemo
