@@ -107,3 +107,36 @@ spec:
           - name: SAY
             value: "hi from postsync-job 1"
       restartPolicy: OnFailure
+
+---
+
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: syncfail-job-
+  namespace: {{ .Values.namespace }}
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  template:
+    metadata:
+      name: syncfail-job
+    spec:
+      containers:
+      - name: echo
+        image: alpine
+        imagePullPolicy: Always
+        command: ["sh", "-c"]
+        args: ["echo >>> $SAY"]
+        resources:
+          limits:
+            cpu: 100m
+            memory: 64Mi
+          requests:
+            cpu: 100m
+            memory: 32Mi
+        env:
+          - name: SAY
+            value: "hi from syncfail-job 1"
+      restartPolicy: OnFailure
