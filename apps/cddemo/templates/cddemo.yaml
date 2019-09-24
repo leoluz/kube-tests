@@ -84,7 +84,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   annotations:
     argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+    #argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
   template:
     metadata:
@@ -95,7 +95,7 @@ spec:
         image: alpine
         imagePullPolicy: Always
         command: ["sh", "-c"]
-        args: ["echo >>> $SAY"]
+        args: ["echo hi from postsync-job 1"]
         resources:
           limits:
             cpu: 100m
@@ -103,9 +103,6 @@ spec:
           requests:
             cpu: 100m
             memory: 32Mi
-        env:
-          - name: SAY
-            value: "hi from postsync-job 1"
       restartPolicy: OnFailure
 
 ---
@@ -117,7 +114,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   annotations:
     argocd.argoproj.io/hook: SyncFail
-    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+    #argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
   template:
     metadata:
@@ -128,7 +125,7 @@ spec:
         image: alpine
         imagePullPolicy: Always
         command: ["sh", "-c"]
-        args: ["echo >>> $SAY"]
+        args: ["echo hi from syncfail-job 1"]
         resources:
           limits:
             cpu: 100m
@@ -136,7 +133,4 @@ spec:
           requests:
             cpu: 100m
             memory: 32Mi
-        env:
-          - name: SAY
-            value: "hi from syncfail-job 1"
       restartPolicy: OnFailure
