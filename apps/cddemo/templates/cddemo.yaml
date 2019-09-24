@@ -44,6 +44,7 @@ spec:
       containers:
       - name: cddemo
         image: {{ .Values.image.repo }}/{{ .Values.image.name }}:{{ .Values.image.tag }}
+        imagePullPolicy: Never
         env:
           - name: SERVER_PORT
             value: "8080"
