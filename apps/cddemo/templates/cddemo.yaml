@@ -80,7 +80,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: postsync-job-
-  namespace: {{ .Values.namespace }}
+  namespace: argocd
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
@@ -110,7 +110,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: syncfail-job-
-  namespace: {{ .Values.namespace }}
+  namespace: argocd
   annotations:
     argocd.argoproj.io/hook: SyncFail
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
