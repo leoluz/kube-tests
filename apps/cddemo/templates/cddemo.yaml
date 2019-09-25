@@ -94,7 +94,7 @@ spec:
         image: alpine
         imagePullPolicy: Always
         command: ["sh", "-c"]
-        args: ["echo hi from postsync-job {{ .Values.jobNumber }}"]
+        args: ["set"]
         resources:
           limits:
             cpu: 100m
