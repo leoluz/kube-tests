@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test
+  namespace: argocd
+spec:
+  # The project the application belongs to.
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+    path: kustomize-guestbook
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: guestbook
+
+  # Sync policy
+  syncPolicy:
+    serverSide:
+      conflictStrategy:
+        - manager: "kube-controller-manager"
+          overwrite: false
+        - manager: "kubectl"
+          overwrite: true
