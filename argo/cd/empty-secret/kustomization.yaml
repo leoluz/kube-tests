@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
 - opaque.yaml
-- secret.yaml
+# - secret.yaml
