@@ -10,6 +10,6 @@ spec:
       containers:
       - name: hi
         image: alpine:latest
-        command: ["echo", "now: $(date)"]
+        command: ["date"]
       restartPolicy: Never
   backoffLimit: 0
