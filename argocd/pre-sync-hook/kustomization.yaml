@@ -3,4 +3,5 @@ kind: Kustomization
 
 resources:
 - opaque-secret.yaml
+- test-cm.yaml
 - hook-job.yaml
