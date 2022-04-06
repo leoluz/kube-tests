@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  labels:
+    app-team: platform
+    name: guestbook
+    app-bu: devx
+spec:
+  # The project the application belongs to.
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: file:///Users/lalmeida1/dev/git/argocd-example-apps
+    targetRevision: HEAD
+    path: kustomize-guestbook
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default 
+
+  # ignoreDifferences:
+  # - group: "*"
+  #   kind: "*"
+  #   managedFieldsManagers:
+  #   - janitor
+  # - group: "apps"
+  #   kind: "Deployment"
+  #   jsonPointers:
+  #   - /spec/replicas
+
+  syncPolicy:
+    syncOptions:
+      - RespectIgnoreDifferences=true

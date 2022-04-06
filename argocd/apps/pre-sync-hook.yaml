@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pre-sync-hook
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    targetRevision: HEAD
+    path: argocd/pre-sync-hook
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default 
+  syncPolicy: {}
