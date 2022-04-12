@@ -9,6 +9,9 @@ image:
 # -- If set, install and upgrade CRDs through helm chart.
 installCRDs: true
 
+external-secrets:
+  installCRDs: true
+
 crds:
   # -- If true, create CRDs for Cluster External Secret.
   createClusterExternalSecret: true
