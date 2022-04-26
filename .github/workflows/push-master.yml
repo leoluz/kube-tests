@@ -18,4 +18,4 @@ jobs:
           echo "after: ${{ github.event.after }}"
 
 
-          git log --diff-filter=A --name-only --oneline ${{ github.event.before }} ${{ github.event.after }}
+          git log --diff-filter=A --name-only --oneline ${{ github.event.before }}..${{ github.event.after }}
