@@ -1,0 +1,10 @@
+name: gitops-actions
+on: [push]
+jobs:
+  publish_twitter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Find new files
+        run: |
+          git log --name-only --oneline
