@@ -9,4 +9,10 @@ jobs:
           fetch-depth: 2
       - name: Find new files
         run: |
+          echo "GITHUB_BASE_REF: ${GITHUB_BASE_REF}"
+          echo "GITHUB_HEAD_REF: ${GITHUB_HEAD_REF}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
+          echo "GITHUB_CONTEXT: ${GITHUB_CONTEXT}"
+
+
           git log --diff-filter=A --name-only --oneline HEAD -1
