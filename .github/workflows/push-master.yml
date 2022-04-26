@@ -9,4 +9,4 @@ jobs:
           fetch-depth: 2
       - name: Find new files
         run: |
-          git log --diff-filter=A --name-only --oneline HEAD
+          git log --diff-filter=A --name-only --oneline HEAD -1
