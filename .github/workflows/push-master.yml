@@ -2,7 +2,7 @@ name: gitops-actions
 on: [push]
 jobs:
   publish_twitter:
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     container: leoluz/goa:latest
     steps:
       - uses: actions/checkout@v3
