@@ -2,20 +2,16 @@ name: gitops-actions
 on: [push]
 jobs:
   publish_twitter:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    container: leoluz/goa:latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Find new files
         run: |
-          echo "GITHUB_BASE_REF: ${GITHUB_BASE_REF}"
-          echo "GITHUB_HEAD_REF: ${GITHUB_HEAD_REF}"
-          echo "GITHUB_SHA: ${GITHUB_SHA}"
-          echo "GITHUB_CONTEXT: ${GITHUB_CONTEXT}"
-          echo "github: ${{ github }}"
-          echo "before: ${{ github.event.before }}"
-          echo "after: ${{ github.event.after }}"
-
-
-          git log --diff-filter=A --name-only --oneline ${{ github.event.before }}..${{ github.event.after }}
+          git log --diff-filter=A --pretty="format:" --name-only ${{ github.event.before }}..${{ github.event.after }}
+      - name: filesystem
+        run: |
+          ls -la /
+          ls -la /github
