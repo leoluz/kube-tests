@@ -14,6 +14,8 @@ jobs:
           echo "GITHUB_SHA: ${GITHUB_SHA}"
           echo "GITHUB_CONTEXT: ${GITHUB_CONTEXT}"
           echo "github: ${{ github }}"
+          echo "before: ${{ github.event.before }}"
+          echo "after: ${{ github.event.after }}"
 
 
           git log --diff-filter=A --name-only --oneline ${{ github.event.before }} ${{ github.event.after }}
