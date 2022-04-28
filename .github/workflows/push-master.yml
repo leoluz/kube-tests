@@ -8,6 +8,7 @@ jobs:
       env:
         GOA_BASE_SHA: ${{ github.event.before }}
         GOA_EVENT_SHA: ${{ github.event.after }}
+        GOA_EVENT_REF_NAME: ${{ github.ref_name }}
         GOA_REPO_URL: ${{ github.server_url }}/${{ github.repository }}
         GOA_TWITTER_CONSUMER_KEY: ${{ secrets.TWITTER_CONSUMER_KEY }}
         GOA_TWITTER_CONSUMER_SECRET: ${{ secrets.TWITTER_CONSUMER_SECRET }}
@@ -15,4 +16,3 @@ jobs:
         GOA_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
     steps:
     - run: goa
-    - run: ls -la /app/repo
