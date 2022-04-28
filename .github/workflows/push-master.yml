@@ -1,5 +1,9 @@
 name: gitops-actions
-on: [push]
+on:
+  push:
+    branches:
+      - main
+      - master
 jobs:
   publish_twitter:
     runs-on: ubuntu-latest
