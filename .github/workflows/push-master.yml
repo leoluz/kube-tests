@@ -15,3 +15,4 @@ jobs:
         GOA_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
     steps:
     - run: goa
+    - run: ls -la /app/repo
