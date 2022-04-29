@@ -8,7 +8,7 @@ jobs:
   publish_twitter:
     runs-on: ubuntu-latest
     container:
-      image: leoluz/goa:beta
+      image: leoluz/goa:latest
       env:
         GOA_BASE_SHA: ${{ github.event.before }}
         GOA_EVENT_SHA: ${{ github.event.after }}
