@@ -1,1 +1,1 @@
-First tweet from gitops
+First tweet from gitops.
