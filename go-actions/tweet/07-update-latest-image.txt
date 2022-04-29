@@ -1,0 +1,1 @@
+Update gitops-actions to latest image tag.
