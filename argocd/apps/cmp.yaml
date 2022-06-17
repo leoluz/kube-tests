@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook2
+  name: cmp-test
   namespace: argocd
   labels:
     app-team: platform
