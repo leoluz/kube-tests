@@ -13,6 +13,14 @@ spec:
         - name: rtmp
           port: 1935
           targetPort: 1935
+        - name: rtmpq
+          port: 1935
+          protocol: UDP
+          targetPort: 1935
         - name: https
           port: 443
+          targetPort: 443
+        - name: http3
+          port: 443
+          protocol: UDP
           targetPort: 443
