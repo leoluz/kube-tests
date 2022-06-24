@@ -12,6 +12,7 @@ spec:
           targetPort: 1986
         - name: rtmp
           port: 1935
+          protocol: TCP
           targetPort: 1935
         - name: rtmpq
           port: 1935
@@ -19,6 +20,7 @@ spec:
           targetPort: 1935
         - name: https
           port: 443
+          protocol: TCP
           targetPort: 443
         - name: http3
           port: 443
