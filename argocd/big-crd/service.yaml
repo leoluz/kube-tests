@@ -3,7 +3,7 @@ kind: Service
 metadata:
     name: multiple-protocol-port-svc
     annotations:
-      argocd.argoproj.io/sync-options: ServerSideApply=true
+      argocd.argoproj.io/sync-options: ServerSideApply=false
 spec:
     ports:
         - name: rtmpk
@@ -17,3 +17,10 @@ spec:
           port: 1935
           protocol: UDP
           targetPort: 1935
+        - name: https
+          port: 443
+          targetPort: 443
+        - name: http3
+          port: 443
+          protocol: UDP
+          targetPort: 443
