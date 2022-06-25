@@ -12,7 +12,6 @@ spec:
           targetPort: 1986
         - name: rtmp
           port: 1935
-          protocol: TCP
           targetPort: 1935
         - name: rtmpq
           port: 1935
