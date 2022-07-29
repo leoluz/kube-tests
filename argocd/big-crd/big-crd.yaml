@@ -10,8 +10,8 @@ spec:
   group: actions.summerwind.dev
   names:
     kind: RunnerDeployment
-    listKind: RunnerDeploymentList
     plural: runnerdeployments
+    listKind: RunnerDeploymentList
     shortNames:
       - rdeploy
     singular: runnerdeployment
