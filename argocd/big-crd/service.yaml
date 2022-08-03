@@ -6,14 +6,13 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true
 spec:
   ports:
-    ports:
-      - name: rtmpk
-        port: 1986
-        protocol: UDP
-        targetPort: 1986
-      - name: rtmp
-        port: 1935
-        targetPort: 1935
-      - name: https
-        port: 443
-        targetPort: 443
+    - name: rtmpk
+      port: 1986
+      protocol: UDP
+      targetPort: 1986
+    - name: rtmp
+      port: 1935
+      targetPort: 1935
+    - name: https
+      port: 443
+      targetPort: 443
