@@ -4,7 +4,7 @@ metadata:
   name: nginx-deployment
   namespace: sandbox-test-leoluz
   labels:
-    app: nginx
+    app: missing
 spec:
   replicas: 2
   selector:
