@@ -5,6 +5,7 @@ metadata:
   namespace: sandbox-test-leoluz
   labels:
     app: missing
+    something-else: bla
 spec:
   replicas: 2
   selector:
