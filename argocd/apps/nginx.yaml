@@ -1,15 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: empty-secret
+  name: nginx
   namespace: argocd
 spec:
+  # The project the application belongs to.
   project: default
+
+  # Source of the application manifests
   source:
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
     targetRevision: HEAD
-    path: argocd/empty-secret
+    path: argocd/nginx
+
+  # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
-    namespace: default 
-  syncPolicy: {}
+    namespace: default
