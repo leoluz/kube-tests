@@ -1,0 +1,21 @@
+apiVersion: "autoscaling.k8s.io/v1"
+kind: VerticalPodAutoscaler
+metadata:
+  labels:
+    app: "this_label_will_be_missing"
+  name: test-vpa
+spec:
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment
+  resourcePolicy:
+    containerPolicies:
+      - containerName: 'nginx'
+        minAllowed:
+          cpu: 500m
+          memory: 1Gi
+        maxAllowed:
+          cpu: 2
+          memory: 2Gi
+        controlledResources: ["cpu", "memory"]
