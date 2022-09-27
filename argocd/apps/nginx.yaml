@@ -10,7 +10,7 @@ spec:
   # Source of the application manifests
   source:
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
-    targetRevision: HEAD
+    targetRevision: master
     path: argocd/nginx
 
   # Destination cluster and namespace to deploy the application
