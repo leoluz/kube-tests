@@ -5,3 +5,4 @@ namespace: default
 
 resources:
 - ingress_old.yaml
+- svc.yaml
