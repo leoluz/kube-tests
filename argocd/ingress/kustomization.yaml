@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: default
 
 resources:
-- ingress.yaml
+- ingress_old.yaml
