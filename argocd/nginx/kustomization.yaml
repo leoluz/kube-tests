@@ -5,4 +5,4 @@ namespace: default
 
 resources:
 - deployment.yaml
-- vpa.yaml
+- hpa.yaml
