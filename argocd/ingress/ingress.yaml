@@ -10,7 +10,8 @@ spec:
         paths:
           - backend:
               service:
-                name: guestbook-ui
+                name: guestbook-svc
                 port:
                   number: 80
+            path: /*
             pathType: ImplementationSpecific
