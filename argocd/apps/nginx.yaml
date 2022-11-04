@@ -21,3 +21,9 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
+    managedNamespaceMetadata:
+      labels:
+        new: label
+        name: nginx
+      annotations:
+        some-annotations: some-value
