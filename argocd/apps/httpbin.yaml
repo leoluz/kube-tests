@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cmp-sidecar
+  name: nginx
   namespace: argocd
 spec:
   # The project the application belongs to.
@@ -9,21 +9,15 @@ spec:
 
   # Source of the application manifests
   source:
-    # repoURL: file:///Users/lalmeida1/dev/git/kube-test
-    repoURL: https://github.com/leoluz/kube-tests.git
+    repoURL: file:///Users/lalmeida1/dev/git/kube-test
     targetRevision: HEAD
-    path: argocd/cmp-sidecar
-    plugin:
-      env:
-        - name: some_var
-          value: some_value
+    path: argocd/httpbin
 
   # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
-    namespace: cmp-sidecar
+    namespace: httpbin
 
-  # Sync policy
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
