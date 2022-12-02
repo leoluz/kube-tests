@@ -2,8 +2,6 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: ssa-test
-  annotations:
-    argocd.argoproj.io/hook: PreSync
 spec:
   concurrencyPolicy: Forbid
   schedule: "*/5 * * * *"
