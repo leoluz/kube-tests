@@ -9,7 +9,7 @@ spec:
 
   # Source of the application manifests
   source:
-    # repoURL: file:///Users/lalmeida1/dev/git/kube-test
+    # repoURL: file:///Users/lalmeida1/dev/git/kube-tests
     repoURL: https://github.com/leoluz/kube-tests.git
     targetRevision: HEAD
     path: argocd/cmp-sidecar
