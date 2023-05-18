@@ -9,3 +9,5 @@ spec:
     - name: http-port
       port: 7777
       targetPort: 80
+    - name: test
+      port: 333
