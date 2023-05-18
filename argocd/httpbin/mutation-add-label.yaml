@@ -8,4 +8,4 @@ spec:
   location: "metadata.labels.event"
   parameters:
     assign:
-      value: "test"
+      value: "GED"
