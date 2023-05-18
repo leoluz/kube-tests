@@ -1,0 +1,11 @@
+apiVersion: mutations.gatekeeper.sh/v1
+kind: AssignMetadata
+metadata:
+  name: ged-2023-spring
+spec:
+  match:
+    scope: Namespaced
+  location: "metadata.labels.event"
+  parameters:
+    assign:
+      value: "ged-2023-spring"
