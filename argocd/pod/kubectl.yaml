@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubectl-leo
+  namespace: dev-argocd-usw2-test
+spec:
+  containers:
+  - command: ["/bin/bash", "-c", "--"]
+    args: ["while true; do sleep 30; done;"]
+    image: docker.intuit.com/dev/deploy/argo-cd-tools/service/argo-cd-tools:0.0.3
+    imagePullPolicy: Always
+    name: kubectl
+    resources:
+      limits:
+        memory: 4Gi
+      requests:
+        cpu: 100m
+        memory: 256Mi
+    volumeMounts:
+      - name: ssh-keys
+        readOnly: true
+        mountPath: /root/.ssh
+  dnsPolicy: ClusterFirst
+  restartPolicy: Never
+  securityContext: {}
+  serviceAccount: argocd-server
+  serviceAccountName: argocd-server
+  volumes:
+    - name: ssh-keys
+      secret:
+        secretName: extension-cronjob
