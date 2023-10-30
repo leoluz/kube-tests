@@ -8,7 +8,17 @@ spec:
   source:
     chart: kube-prometheus-stack
     repoURL: https://prometheus-community.github.io/helm-charts
-    targetRevision: 41.6.1
+    targetRevision: 51.2.0
+    helm:
+      valuesObject:
+        kubeStateMetrics:
+          enabled: false
+        nodeExporter:
+          enabled: false
+        grafana:
+          enabled: false
+        alertmanager:
+          enabled: false
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc

@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: httpbin
-  namespace: argocd
+  # namespace: argocd
 spec:
   # The project the application belongs to.
   project: default
