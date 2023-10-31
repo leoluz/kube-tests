@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-kubecon
+  namespace: argocd-kubecon
+spec:
+  project: default
+  source:
+    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    targetRevision: HEAD
+    path: argocd/argocd-namespaced
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-kubecon
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd-kubecon
+
+resources:
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.4/manifests/ha/namespace-install.yaml
+- clusterrolebinding-apiserver.yaml
+- clusterrolebinding-app-controller.yaml
+
+patchesStrategicMerge:
+- metrics-extension-patch.yaml
