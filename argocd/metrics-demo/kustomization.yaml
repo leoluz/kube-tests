@@ -4,7 +4,6 @@ kind: Kustomization
 namespace: metrics-demo
 
 resources:
-  - namespace.yaml
   - install.yaml
   - error-rate.yaml
   - error-rate-anomaly.yaml
