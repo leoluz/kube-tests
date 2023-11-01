@@ -8,4 +8,4 @@ data:
     - name: metrics
       backend:
         services:
-        - url: http://argocd-metrics-server.metrics-server
+        - url: http://argocd-metrics-server.argocd-metrics.svc.cluster.local
