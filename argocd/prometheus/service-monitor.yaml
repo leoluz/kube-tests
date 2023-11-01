@@ -4,7 +4,7 @@ metadata:
   name: monitoring-namespaces-services
   namespace: monitoring
   labels:
-    name: prometheus
+    release: monitoring
 spec:
   selector:
     matchLabels:
