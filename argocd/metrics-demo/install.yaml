@@ -59,7 +59,7 @@ spec:
               name: service
               protocol: TCP
             - containerPort: 8490
-              name: metric
+              name: metrics
               protocol: TCP
           livenessProbe:
             httpGet:
