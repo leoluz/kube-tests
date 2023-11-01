@@ -13,6 +13,7 @@ data:
           "dashboards": [
             {
               "groupKind": "pod",
+              "intervals": ["1h", "2h", "6h"],
               "tabs": ["Golden Signal"],
               "rows": [
                     {
@@ -97,6 +98,7 @@ data:
             },
             {
               "groupKind": "deployment",
+              "intervals": ["1h", "2h", "6h"],
               "tabs": ["Golden Signal"],
               "rows": [
                  {
@@ -195,6 +197,7 @@ data:
             },
             {
               "groupKind": "rollout",
+              "intervals": ["1h", "2h", "6h"],
               "tabs": ["Golden Signal"],
               "rows": [
                  {
