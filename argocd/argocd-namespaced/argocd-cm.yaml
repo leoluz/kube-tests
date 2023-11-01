@@ -5,7 +5,7 @@ metadata:
 data:
   extension.config: |-
     extensions:
-      - name: metrics
-        backend:
-          services:
-            - url: http://metrics-server.argocd-metrics-server
+    - name: metrics
+      backend:
+        services:
+        - url: http://argocd-metrics-server.metrics-server

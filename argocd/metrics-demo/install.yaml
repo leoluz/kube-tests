@@ -1,17 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: numalogic-rollout-demo
+  name: metrics-demo
   labels:
-    app: numalogic-rollout-demo
-    app.kubernetes.io/instance: numalogic-rollout-demo
-    applications.argoproj.io/app-name: numalogic-demo
+    app: metrics-demo
 spec:
   replicas: 2
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: numalogic-rollout-demo
+      app: metrics-demo
   strategy:
     canary:
       analysis:
@@ -43,8 +41,7 @@ spec:
   template:
     metadata:
       labels:
-        app: numalogic-rollout-demo
-        applications.argoproj.io/app-name: numalogic-rollout-demo
+        app: metrics-demo
     spec:
       containers:
         - name: app
@@ -82,30 +79,28 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: numalogic-demo-service
+  name: metrics-demo
 spec:
   ports:
     - name: service
       port: 8080
       targetPort: 8080
   selector:
-    app: numalogic-rollout-demo
+    app: metrics-demo
   type: NodePort
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    iks-metric: actuator-prometheus
-  name: numalogic-demo-service-metrics
+  name: metrics-demo-metrics
 spec:
   ports:
-    - name: iks-metric
+    - name: metric
       port: 8490
       protocol: TCP
       targetPort: 8490
   selector:
-    app: numalogic-rollout-demo
+    app: metrics-demo
   type: ClusterIP
 ---
 apiVersion: v1

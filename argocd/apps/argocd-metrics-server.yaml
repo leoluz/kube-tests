@@ -5,9 +5,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    repoURL: https://github.com/leoluz/kube-tests.git
     targetRevision: HEAD
     path: argocd/argocd-metrics-server
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-metrics
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
