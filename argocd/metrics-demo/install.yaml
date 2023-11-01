@@ -113,7 +113,7 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: numalogic-rollout-demo
+    app: metrics-demo
   type: NodePort
 ---
 apiVersion: v1
@@ -126,5 +126,5 @@ spec:
       port: 8080
       targetPort: 8080
   selector:
-    app: numalogic-rollout-demo
+    app: metrics-demo
   type: NodePort
