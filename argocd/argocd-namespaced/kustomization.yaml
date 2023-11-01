@@ -4,9 +4,12 @@ kind: Kustomization
 namespace: argocd-kubecon
 
 resources:
-- https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.4/manifests/ha/namespace-install.yaml
+- https://raw.githubusercontent.com/argoproj/argo-cd/v2.8.5/manifests/namespace-install.yaml
 - clusterrolebinding-apiserver.yaml
 - clusterrolebinding-app-controller.yaml
 
 patchesStrategicMerge:
 - metrics-extension-patch.yaml
+- enable-proxy-ext.yaml
+- rbac.yaml
+- argocd-cm.yaml

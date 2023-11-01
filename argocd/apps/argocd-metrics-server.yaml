@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-metrics-server
+spec:
+  project: default
+  source:
+    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    targetRevision: HEAD
+    path: argocd/argocd-metrics-server
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd-metrics
