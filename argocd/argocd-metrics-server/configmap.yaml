@@ -165,7 +165,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", image!=\"\", container!=\"POD\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_cpu_pie",
@@ -173,7 +173,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_line",
@@ -181,7 +181,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_pie",
@@ -189,7 +189,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     }
                   ]
                 }
@@ -264,7 +264,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", image!=\"\", container!=\"POD\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_cpu_pie",
@@ -272,7 +272,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_cpu_usage_seconds_total{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_line",
@@ -280,7 +280,7 @@ data:
                       "description": "",
                       "graphType": "line",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     },
                     {
                       "name": "pod_memory_pie",
@@ -288,7 +288,7 @@ data:
                       "description": "",
                       "graphType": "pie",
                       "metricName": "pod",
-                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\", container!=\"POD\", image!=\"\", container!=\"\", container_name!=\"POD\"}[5m])) by (pod)"
+                      "queryExpression": "sum(rate(container_memory_usage_bytes{pod=~\"{{.name}}\"}[5m])) by (pod)"
                     }
                   ]
                 }
