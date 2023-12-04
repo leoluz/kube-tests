@@ -8,4 +8,4 @@ spec:
   location: "metadata.labels.event"
   parameters:
     assign:
-      value: "GED-2023-SPRING"
+      value: "FROM-MUTATION-WEBHOOK"
