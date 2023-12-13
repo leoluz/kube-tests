@@ -5,5 +5,5 @@ namespace: httpbin
 
 resources:
 - svc.yaml
-- deployment.yaml
-# - mutation-add-label.yaml
+# - deployment.yaml
+- mutation-add-label.yaml
