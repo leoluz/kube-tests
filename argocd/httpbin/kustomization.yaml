@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: httpbin
 
 resources:
+- required-labels-crd.yaml
 - svc.yaml
 - deployment.yaml
 - mutation-add-label.yaml
