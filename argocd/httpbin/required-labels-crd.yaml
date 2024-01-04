@@ -26,5 +26,5 @@ spec:
           required := {label | label := input.parameters.labels[_]}
           missing := required - provided
           count(missing) > 0
-          msg := sprintf("you must provide labels: %v", [missing])
+          msg := sprintf("you must provide the label %v for resource %v/%v", [missing, input.review.object.kind, input.review.object.metadata.name])
         }
