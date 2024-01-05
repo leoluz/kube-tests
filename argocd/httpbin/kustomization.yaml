@@ -9,3 +9,4 @@ resources:
 - deployment.yaml
 - mutation-add-label.yaml
 - must-have-label.yaml
+- cronjob.yaml
