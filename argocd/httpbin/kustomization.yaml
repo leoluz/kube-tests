@@ -5,8 +5,9 @@ namespace: httpbin
 
 resources:
 - required-labels-crd.yaml
+- crontab-crd.yaml
 - svc.yaml
 - deployment.yaml
 - mutation-add-label.yaml
 - must-have-label.yaml
-- cronjob.yaml
+- crontab.yaml

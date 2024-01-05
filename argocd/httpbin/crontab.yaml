@@ -1,0 +1,8 @@
+apiVersion: stable.example.com
+kind: CronTab
+metadata:
+  name: hello
+spec:
+  cronSpec: null
+  image: busybox:1.28
+  replicas: 
