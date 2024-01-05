@@ -3,6 +3,7 @@ kind: CronJob
 metadata:
   name: hello
 spec:
+  schedule: null
   jobTemplate:
     spec:
       backoffLimit: 0
