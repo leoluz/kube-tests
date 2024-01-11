@@ -9,22 +9,22 @@ spec:
   destination:
     name: in-cluster
     namespace: crossplane-test
-  ignoreDifferences:
-  - group: apps
-    jqPathExpressions:
-    - .spec.template.spec.containers[].env[].valueFrom.resourceFieldRef.divisor
-    - .spec.template.spec.initContainers[].env[].valueFrom.resourceFieldRef.divisor
-    kind: Deployment
+  # ignoreDifferences:
+  # - group: apps
+  #   jqPathExpressions:
+  #   - .spec.template.spec.containers[].env[].valueFrom.resourceFieldRef.divisor
+  #   - .spec.template.spec.initContainers[].env[].valueFrom.resourceFieldRef.divisor
+  #   kind: Deployment
   project: default
   source:
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
     path: argocd/crossplane
     targetRevision: master
   syncPolicy:
-    automated:
-      allowEmpty: true
-      prune: true
-      selfHeal: true
+    # automated:
+    #   allowEmpty: true
+    #   prune: true
+    #   selfHeal: true
     syncOptions:
     - CreateNamespace=true
     - ServerSideApply=false
