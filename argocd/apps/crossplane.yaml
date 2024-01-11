@@ -18,7 +18,7 @@ spec:
   project: default
   source:
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
-    path: argocd/ssd-helm
+    path: argocd/crossplane
     targetRevision: master
   syncPolicy:
     automated:
