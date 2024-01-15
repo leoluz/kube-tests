@@ -14,7 +14,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: crossplane
+  name: admin
 subjects:
 - kind: ServiceAccount
   name: crossplane
