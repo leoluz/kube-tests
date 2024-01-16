@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ssa-ns-bug
+  namespace: argocd
+spec:
+  destination:
+    namespace: kustomize-guestbook
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    kustomize:
+      namespace: kustomize-guestbook
+    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    targetRevision: HEAD
+    path: argocd/ssa-ns-bug
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
