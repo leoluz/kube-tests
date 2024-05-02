@@ -3,6 +3,8 @@ kind: Application
 metadata:
   name: ssa-ns-bug
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
 spec:
   destination:
     namespace: kustomize-guestbook
@@ -15,8 +17,6 @@ spec:
     targetRevision: HEAD
     path: argocd/ssa-ns-bug
   syncPolicy:
-    automated:
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
