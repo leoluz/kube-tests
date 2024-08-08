@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ephemeral
+  namespace: argocd
+spec:
+  project: ephemeral
+
+  # Source of the application manifests
+  source:
+    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    targetRevision: HEAD
+    path: argocd/ephemeral
+
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ephemeral
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ephemeral
+spec:
+  description: Project for ephemeral access controller tests
+  destinations:
+  - namespace: ephemeral
+    server: '*'
+  roles:
+  - description: admin
+    groups:
+    - test:admins
+    name: admin
+    policies:
+    - p, leoluz, applications, *, *, allow
+  - description: developer
+    name: deployer
+    policies:
+    - p, proj:ephemeral:deployer, applications, get, sample-test-app/*, allow
+    - p, proj:ephemeral:deployer, applications, sync, sample-test-app/*, allow
+    - p, proj:ephemeral:deployer, applications, update, sample-test-project/*, allow
+    - p, proj:ephemeral:deployer, applications, create, sample-test-project/*, allow
+    - p, proj:ephemeral:deployer, applications, override, sample-test-project/*, allow
+    - p, proj:ephemeral:deployer, applications, delete, sample-test-project/*, allow
+    - p, proj:ephemeral:deployer, applications, action/*, sample-test-project/*, allow
+  # sourceRepos:
+  # - https://github.com/argoproj-labs/argocd-ephemeral-access.git
