@@ -10,10 +10,10 @@ spec:
   roles:
   - description: admin
     groups:
-    - test:admins
+    - 'leoluz'
     name: admin
     policies:
-    - p, leoluz, applications, *, *, allow
+    - p, proj:ephemeral:admin, applications, *, *, allow
   - description: developer
     name: deployer
     policies:
@@ -24,5 +24,5 @@ spec:
     - p, proj:ephemeral:deployer, applications, override, sample-test-project/*, allow
     - p, proj:ephemeral:deployer, applications, delete, sample-test-project/*, allow
     - p, proj:ephemeral:deployer, applications, action/*, sample-test-project/*, allow
-  # sourceRepos:
-  # - https://github.com/argoproj-labs/argocd-ephemeral-access.git
+  sourceRepos:
+  - '*'
