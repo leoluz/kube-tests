@@ -11,6 +11,7 @@ spec:
 
   # Source of the application manifests
   source:
+    # repoURL: https://github.com/leoluz/kube-tests.git
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
     targetRevision: HEAD
     path: argocd/httpbin

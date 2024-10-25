@@ -1,22 +1,38 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ephemeral
+spec:
+  description: Project for ephemeral access controller tests
+  destinations:
+  - namespace: ephemeral
+    server: '*'
+  roles:
+  - description: admin
+    name: admin
+    policies:
+    - p, proj:ephemeral:admin, applications, sync, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, applications, action/*, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, applications, delete/*/Pod/*, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, logs, get, ephemeral/ephemeral/ephemeral, deny
+  sourceRepos:
+  - '*'
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: ephemeral
   namespace: argocd
 spec:
   project: ephemeral
-
-  # Source of the application manifests
   source:
+    # repoURL: https://github.com/leoluz/kube-tests.git
     repoURL: file:///Users/lalmeida1/dev/git/kube-tests
     targetRevision: HEAD
     path: argocd/ephemeral
-
-  # Destination cluster and namespace to deploy the application
   destination:
     server: https://kubernetes.default.svc
     namespace: ephemeral
-
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
