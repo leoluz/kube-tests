@@ -9,20 +9,11 @@ spec:
     server: '*'
   roles:
   - description: admin
-    groups:
-    - 'leoluz'
     name: admin
     policies:
-    - p, proj:ephemeral:admin, applications, *, *, allow
-  - description: developer
-    name: deployer
-    policies:
-    - p, proj:ephemeral:deployer, applications, get, sample-test-app/*, allow
-    - p, proj:ephemeral:deployer, applications, sync, sample-test-app/*, allow
-    - p, proj:ephemeral:deployer, applications, update, sample-test-project/*, allow
-    - p, proj:ephemeral:deployer, applications, create, sample-test-project/*, allow
-    - p, proj:ephemeral:deployer, applications, override, sample-test-project/*, allow
-    - p, proj:ephemeral:deployer, applications, delete, sample-test-project/*, allow
-    - p, proj:ephemeral:deployer, applications, action/*, sample-test-project/*, allow
+    - p, proj:ephemeral:admin, applications, sync, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, applications, action/*, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, applications, delete/*/Pod/*, ephemeral/ephemeral, allow
+    - p, proj:ephemeral:admin, logs, get, ephemeral/ephemeral/ephemeral, deny
   sourceRepos:
   - '*'

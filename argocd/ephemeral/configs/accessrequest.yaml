@@ -1,0 +1,16 @@
+apiVersion: ephemeral-access.argoproj-labs.io/v1alpha1
+kind: AccessRequest
+metadata:
+  labels:
+    app.kubernetes.io/name: argocd-ephemeral-access
+    app.kubernetes.io/managed-by: kustomize
+  name: nginx-leoluz-3
+  namespace: argocd
+spec:
+  duration: '1s'
+  roleTemplateName: admin
+  application: 
+    name: ephemeral
+    namespace: argocd
+  subject:
+    username: leoluz
