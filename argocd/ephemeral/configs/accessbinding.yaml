@@ -1,0 +1,12 @@
+apiVersion: ephemeral-access.argoproj-labs.io/v1alpha1
+kind: AccessBinding
+metadata:
+  name: devops-access-binding
+spec:
+  friendlyName: Devops (Write)
+  if: "true"
+  ordinal: 1
+  roleTemplateRef:
+    name: devops
+  subjects:
+  - group1

@@ -1,10 +1,9 @@
 apiVersion: ephemeral-access.argoproj-labs.io/v1alpha1
 kind: RoleTemplate
 metadata:
-  name: admin
-  namespace: argocd
+  name: devops
 spec:
-  name: developer
+  name: devops
   description: write permission in application {{.Application}}
   policies:
     - p, {{.Role}}, applications, sync, {{.Project}}/{{.Application}}, allow
