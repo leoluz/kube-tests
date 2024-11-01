@@ -3,10 +3,11 @@ kind: RoleTemplate
 metadata:
   name: devops
 spec:
-  name: devops
   description: write permission in application {{.application}}
+  name: "DevOps (Write)"
   policies:
-    - p, {{.role}}, applications, sync, {{.project}}/{{.application}}, allow
-    - p, {{.role}}, applications, action/*, {{.project}}/{{.application}}, allow
-    - p, {{.role}}, applications, delete/*/Pod/*, {{.project}}/{{.application}}, allow
-    - p, {{.role}}, logs, get, {{.project}}/{{.namespace}}/{{.application}}, allow
+  - p, {{.role}}, applications, sync, {{.project}}/{{.application}}, allow
+  - p, {{.role}}, applications, get, {{.project}}/{{.application}}, deny
+  - p, {{.role}}, applications, action/*, {{.project}}/{{.application}}, allow
+  - p, {{.role}}, applications, delete/*/Pod/*, {{.project}}/{{.application}}, allow
+  - p, {{.role}}, logs, get, {{.project}}/{{.namespace}}/{{.application}}, allow
