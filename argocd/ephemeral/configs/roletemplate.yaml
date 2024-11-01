@@ -4,7 +4,7 @@ metadata:
   name: devops
 spec:
   description: write permission in application {{.application}}
-  name: "DevOps (Write)"
+  name: devops
   policies:
   - p, {{.role}}, applications, sync, {{.project}}/{{.application}}, allow
   - p, {{.role}}, applications, get, {{.project}}/{{.application}}, deny
