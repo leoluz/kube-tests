@@ -4,9 +4,9 @@ metadata:
   name: devops
 spec:
   name: devops
-  description: write permission in application {{.Application}}
+  description: write permission in application {{.application}}
   policies:
-    - p, {{.Role}}, applications, sync, {{.Project}}/{{.Application}}, allow
-    - p, {{.Role}}, applications, action/*, {{.Project}}/{{.Application}}, allow
-    - p, {{.Role}}, applications, delete/*/Pod/*, {{.Project}}/{{.Application}}, allow
-    - p, {{.Role}}, logs, get, {{.Project}}/{{.Namespace}}/{{.Application}}, allow
+    - p, {{.role}}, applications, sync, {{.project}}/{{.application}}, allow
+    - p, {{.role}}, applications, action/*, {{.project}}/{{.application}}, allow
+    - p, {{.role}}, applications, delete/*/Pod/*, {{.project}}/{{.application}}, allow
+    - p, {{.role}}, logs, get, {{.project}}/{{.namespace}}/{{.application}}, allow
