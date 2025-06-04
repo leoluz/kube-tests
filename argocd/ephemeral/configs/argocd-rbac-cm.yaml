@@ -9,5 +9,6 @@ metadata:
 data:
   policy.csv: |
     p, role:readonly, applications, get, *, allow
+    p, role:readonly, extensions, invoke, ephemeral, allow
   policy.default: role:readonly
 

@@ -8,3 +8,6 @@ metadata:
   namespace: argocd
 data:
   accounts.leoluz: login,apiKey
+  extension.config.ephemeral: |-
+    services:
+    - url: http://localhost:8888

@@ -7,6 +7,9 @@ spec:
   destinations:
   - namespace: ephemeral
     server: '*'
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: Namespace
   roles:
   - description: admin
     name: admin
@@ -23,6 +26,8 @@ kind: Application
 metadata:
   name: ephemeral
   namespace: argocd
+  labels:
+    argocon-demo: 'true'
 spec:
   project: ephemeral
   source:

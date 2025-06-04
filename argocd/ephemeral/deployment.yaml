@@ -2,9 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
-  labels:
-    app: missing
-    something-else: bla
 spec:
   replicas: 2
   selector:
@@ -21,10 +18,10 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-        livenessProbe:
-          exec:
-            command:
-            - cat
-            - non-existent-file
-          initialDelaySeconds: 5
-          periodSeconds: 180
+        # livenessProbe:
+        #   exec:
+        #     command:
+        #     - cat
+        #     - non-existent-file
+        #   initialDelaySeconds: 5
+        #   periodSeconds: 180

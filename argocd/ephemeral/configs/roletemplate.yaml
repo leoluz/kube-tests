@@ -2,6 +2,7 @@ apiVersion: ephemeral-access.argoproj-labs.io/v1alpha1
 kind: RoleTemplate
 metadata:
   name: devops
+  namespace: ephemeral
 spec:
   description: write permission in application {{.application}}
   name: devops
@@ -10,4 +11,5 @@ spec:
   - p, {{.role}}, applications, get, {{.project}}/{{.application}}, deny
   - p, {{.role}}, applications, action/*, {{.project}}/{{.application}}, allow
   - p, {{.role}}, applications, delete/*/Pod/*, {{.project}}/{{.application}}, allow
+  - p, {{.role}}, applications, update, {{.project}}/{{.application}}, allow
   - p, {{.role}}, logs, get, {{.project}}/{{.namespace}}/{{.application}}, allow
