@@ -12,7 +12,7 @@ spec:
   # Source of the application manifests
   source:
     # repoURL: https://github.com/leoluz/kube-tests.git
-    repoURL: file:///Users/lalmeida1/dev/git/kube-tests
+    repoURL: file:///Users/leoluz/git/kube-tests
     targetRevision: HEAD
     path: argocd/httpbin
 
@@ -23,5 +23,5 @@ spec:
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
-    - ServerSideApply=true
+      - CreateNamespace=true
+      - ServerSideApply=true
